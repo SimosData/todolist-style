@@ -1,0 +1,319 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  /* Replace the gradient with a beach wallpaper image */
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app {
+  font-family: "Poppins", sans-serif;
+  width: min(95vw, 500px);
+  margin: auto;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.app-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.2em 0 1.5em 0;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+  font-size: 1.05em;
+  border-radius: 0.5em 0.5em 0 0;
+  margin-top: auto;
+  flex-shrink: 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+}
+.container {
+  max-width: 800px; /* Increased from typical 400-600px */
+  width: 90%;
+  margin: 40px auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+#wrapper input,
+#wrapper button,
+#task-location,
+#task-datetime,
+#task-category {
+  font-size: 1.3rem; /* Larger input and button text */
+  padding: 14px 18px;
+}
+
+#tasks {
+  font-size: 1.2rem; /* Larger task text */
+}
+
+#category-buttons button,
+#task-category {
+  font-size: 1.1rem;
+  padding: 10px 18px;
+}
+
+.task {
+  font-size: 1.2rem;
+  padding: 18px 14px;
+}
+#wrapper {
+  position: relative;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 8fr 4fr;
+  gap: 1em;
+}
+#wrapper input {
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  color: #111111;
+  font-size: 0.9em;
+  border: none;
+  border-bottom: 2px solid #d1d3d4;
+  padding: 1em 0.5em;
+}
+#wrapper input:focus {
+  outline: none;
+  border-color: #5a95ff;
+}
+#wrapper button {
+  position: relative;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+  background-color: #5a95ff;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  outline: none;
+}
+#tasks {
+  margin-top: 1em;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  padding: 1em 0.5em;
+}
+.task {
+  background-color: #ffffff;
+  padding: 0.8em 1em;
+  display: grid;
+  grid-template-columns: 1fr 8fr 2fr 2fr;
+  gap: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.05);
+  align-items: center;
+  cursor: pointer;
+}
+.task:not(:first-child) {
+  margin-top: 1em;
+}
+.task input[type="checkbox"] {
+  position: relative;
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid #e1e1e1;
+}
+.task input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.task input[type="checkbox"]:checked {
+  background-color: #5a95ff;
+  border-color: #5a95ff;
+}
+.task input[type="checkbox"]:checked:before {
+  position: absolute;
+  content: "\f00c";
+  color: #ffffff;
+  font-size: 0.8em;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+.task span {
+  font-size: 15px;
+  font-weight: 400;
+  word-break: break-all;
+}
+.task button {
+  color: #ffffff;
+  width: 100%;
+  padding: 1em 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.edit {
+  background-color: #5a95ff;
+}
+.delete {
+  background-color: #ff5c5c;
+}
+#pending-tasks span {
+  color: #5a95ff;
+}
+.completed {
+  text-decoration: line-through;
+  color: #a0a0a0;
+}
+#error {
+  text-align: center;
+  display: none;
+  background-color: #ffffff;
+  color: #ff5c5c;
+  margin-top: 1.5em;
+  padding: 1em 0;
+  border-radius: 0.5em;
+}
+
+/* Add footer styles */
+.app-footer {
+  width: 100%;
+  text-align: center;
+  padding: 1.2em 0 1.5em 0;
+  background: rgba(255,255,255,0.85);
+  color: #333;
+  font-size: 1.05em;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  margin-top: 2em;
+  border-radius: 0.5em 0.5em 0 0;
+}
+
+.app-footer a {
+  color: #5a95ff;
+  text-decoration: none;
+}
+
+.app-footer a:hover {
+  text-decoration: underline;
+}
+
+/* Style for all buttons */
+button {
+  background-color: #5a95ff; /* Blue color */
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff5c5c; /* Red color on hover */
+}
+
+/* Style for active filter button */
+.filter-btn.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.filter-btn.active:hover {
+  background-color: #ff5c5c;
+}
+
+/* Ensure category buttons have consistent styling */
+#category-buttons button {
+  background-color: #5a95ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#category-buttons button:hover {
+  background-color: #ff5c5c;
+}
+
+/* Style for search button */
+#searchButton {
+  background-color: #5a95ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #ff5c5c;
+}
+
+/* Make Add button turn red on hover */
+#add-btn:hover {
+  background-color: #ff5c5c;
+}
+
+/* Style for notepad area */
+.task-notes {
+  display: none;
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-top: 10px;
+}
+
+.task-notes textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border: 1px solid #d1d3d4;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+  resize: vertical;
+}
+
+.notes-buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.save-note, .delete-note {
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.save-note {
+  background-color: #5a95ff;
+}
+
+.delete-note {
+  background-color: #ff5c5c;
+}
+
+.save-note:hover, .delete-note:hover {
+  opacity: 0.9;
+}
+
+/* Show notes when task is active */
+.task.active .task-notes {
+  display: block;
+}

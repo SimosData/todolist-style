@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List New</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="container">
+        <div id="wrapper">
+          <input type="text" id="task-location" placeholder="Enter location (optional)">
+          <input type="datetime-local" id="task-datetime" />
+          <button id="add-btn">Add</button>
+        </div>
+        <div id="tasks">
+          <p id="pending-tasks">
+            You have <span class="count-value">0</span> task(s) to complete.
+          </p>
+        </div>
+        <div id="category-buttons">
+          <button class="filter-btn" data-category="all">All</button>
+          <button class="filter-btn" data-category="work">Work</button>
+          <button class="filter-btn" data-category="personal">Personal</button>
+          <button class="filter-btn" data-category="shopping">Shopping</button>
+          <button class="filter-btn" data-category="other">Other</button>
+        </div>
+        <select id="task-category">
+          <option value="work">Work</option>
+          <option value="personal">Personal</option>
+          <option value="shopping">Shopping</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <p id="error">Input cannot be empty!</p>
+      <h2>Search Online</h2>
+      <!-- Search section -->
+      <div class="search-container">
+          <input type="text" id="searchQuery" placeholder="Enter search term">
+          <button id="searchButton">Search Google</button>
+      </div>
+      <script src="script.js"></script>
+    </div>
+    <footer class="app-footer">
+      This design was created by Simos Michail<br>
+      Contact: <a href="mailto:simosmichail176@gmail.com">simosmichail176@gmail.com</a>
+    </footer>
+    <div id="map" style="height:400px;width:100%;"></div>
+    <script src="main.js"></script>
+</body>
+</html>
